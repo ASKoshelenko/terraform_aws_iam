@@ -3,7 +3,10 @@ resource "aws_lambda_function" "this" {
   role          = var.role
   handler       = var.handler
   runtime       = var.runtime
-  filename      = "${path.root}/function.zip"
+  filename      = "${path.module}/function.zip"
+  environment {
+    variables = var.environment_variables
+  }
 }
 
 output "lambda_function_arn" {

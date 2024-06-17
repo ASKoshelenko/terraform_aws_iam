@@ -48,3 +48,9 @@ variable "lambda_function_name" {
   type        = string
   default     = "S3OperationsFunction"
 }
+
+variable "allowed_ip" {
+  description = "The IP address allowed to access the resources"
+  type        = string
+  default     = "82.193.99.55/32"
+}

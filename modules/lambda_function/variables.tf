@@ -22,3 +22,9 @@ variable "source_code" {
   description = "The path to the ZIP file containing the Lambda function code"
   type        = string
 }
+
+variable "environment_variables" {
+  description = "Environment variables for the Lambda function"
+  type        = map(string)
+  default     = {}
+}
