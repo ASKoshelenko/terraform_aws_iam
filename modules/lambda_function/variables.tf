@@ -3,36 +3,22 @@ variable "function_name" {
   type        = string
 }
 
-variable "role_arn" {
-  description = "The ARN of the IAM role"
+variable "role" {
+  description = "The ARN of the IAM role for the Lambda function"
   type        = string
 }
 
 variable "handler" {
-  description = "The function handler"
+  description = "The handler for the Lambda function"
   type        = string
-  default     = "lambda_function.lambda_handler"
 }
 
 variable "runtime" {
-  description = "The runtime environment"
-  type        = string
-  default     = "python3.8"
-}
-
-variable "filename" {
-  description = "The filename of the Lambda deployment package"
-  type        = string
-  default     = "function.zip"
-}
-
-variable "aws_region" {
-  description = "The AWS region"
+  description = "The runtime for the Lambda function"
   type        = string
 }
 
-variable "tags" {
-  description = "Tags to apply to the Lambda function"
-  type        = map(string)
-  default     = {}
+variable "source_code" {
+  description = "The path to the ZIP file containing the Lambda function code"
+  type        = string
 }

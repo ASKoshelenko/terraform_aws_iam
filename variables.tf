@@ -4,38 +4,47 @@ variable "aws_region" {
   default     = "eu-central-1"
 }
 
-variable "aws_profile" {
-  description = "The AWS profile to use."
+variable "aws_access_key" {
+  description = "The AWS access key to use."
   type        = string
-  default     = "assume-role-profile"
 }
 
-variable "lambda_role_name" {
-  description = "The name of the Lambda IAM role"
+variable "aws_secret_key" {
+  description = "The AWS secret key to use."
+  type        = string
+}
+
+variable "aws_session_token" {
+  description = "The AWS session token to use."
+  type        = string
+}
+
+variable "role_name" {
+  description = "The name of the IAM role"
   type        = string
   default     = "3TaskLambda"
 }
 
-variable "lambda_policy_name" {
-  description = "The name of the Lambda IAM policy"
+variable "policy_name" {
+  description = "The name of the IAM policy"
   type        = string
   default     = "3Task_S3ManagementPolicy"
+}
+
+variable "policy_description" {
+  description = "The description of the IAM policy"
+  type        = string
+  default     = "Policy for managing S3 and Lambda functions"
+}
+
+variable "permissions_boundary" {
+  description = "The ARN of the permissions boundary policy"
+  type        = string
+  default     = "arn:aws:iam::654654554758:policy/eo_role_boundary"
 }
 
 variable "lambda_function_name" {
   description = "The name of the Lambda function"
   type        = string
   default     = "S3OperationsFunction"
-}
-
-variable "lambda_deployment_package" {
-  description = "The filename of the Lambda deployment package"
-  type        = string
-  default     = "function.zip"
-}
-
-variable "lambda_tags" {
-  description = "Tags to apply to the Lambda function"
-  type        = map(string)
-  default     = {}
 }

@@ -3,7 +3,12 @@ variable "policy_name" {
   type        = string
 }
 
-variable "role_arn" {
-  description = "The ARN of the IAM role"
+variable "description" {
+  description = "The description of the IAM policy"
+  type        = string
+}
+
+variable "policy_json" {
+  description = "The JSON of the IAM policy"
   type        = string
 }
