@@ -4,21 +4,6 @@ variable "aws_region" {
   default     = "eu-central-1"
 }
 
-variable "aws_access_key" {
-  description = "The AWS access key to use."
-  type        = string
-}
-
-variable "aws_secret_key" {
-  description = "The AWS secret key to use."
-  type        = string
-}
-
-variable "aws_session_token" {
-  description = "The AWS session token to use."
-  type        = string
-}
-
 variable "role_name" {
   description = "The name of the IAM role"
   type        = string
