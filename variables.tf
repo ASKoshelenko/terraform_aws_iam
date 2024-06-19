@@ -4,6 +4,12 @@ variable "aws_region" {
   default     = "eu-central-1"
 }
 
+variable "aws_profile" {
+  description = "The AWS profile to use."
+  type        = string
+  default     = "default"
+}
+
 variable "role_name" {
   description = "The name of the IAM role"
   type        = string

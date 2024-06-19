@@ -1,10 +1,3 @@
-provider "aws" {
-  region = var.aws_region
-  profile = "default"
-}
-
-data "aws_caller_identity" "current" {}
-
 module "iam_role" {
   source                 = "./modules/iam_role"
   role_name              = "${var.role_name}_byTF"
