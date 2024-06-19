@@ -1,11 +1,23 @@
-output "policy_dev_team_arn" {
-  value = module.dev_team_full_access_policy.policy_arn
+output "lambda_function_arn" {
+  value = module.lambda_function.lambda_function_arn
 }
 
-output "policy_iam_management_arn" {
-  value = module.iam_role_and_policy_management_policy.policy_arn
+output "lambda_function_name" {
+  value = module.lambda_function.lambda_function_name
 }
 
-output "role_arn" {
-  value = module.dev_team_role.role_name
+output "sqs_success_queue_url" {
+  value = aws_sqs_queue.lambda_success.id
+}
+
+output "sqs_failure_queue_url" {
+  value = aws_sqs_queue.lambda_failure.id
+}
+
+output "sqs_success_queue_arn" {
+  value = aws_sqs_queue.lambda_success.arn
+}
+
+output "sqs_failure_queue_arn" {
+  value = aws_sqs_queue.lambda_failure.arn
 }

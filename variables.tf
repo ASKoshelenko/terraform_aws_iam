@@ -7,29 +7,41 @@ variable "aws_region" {
 variable "aws_profile" {
   description = "The AWS profile to use."
   type        = string
-  default     = "DevOpsAccessRole"
+  default     = "default"
 }
 
-variable "dev_team_role_name" {
-  description = "The name of the Dev Team role"
+variable "role_name" {
+  description = "The name of the IAM role"
   type        = string
-  default     = "DevTeamRole_byTF"
+  default     = "3TaskLambda"
 }
 
-variable "dev_team_full_access_policy_name" {
-  description = "The name of the Dev Team full access policy"
+variable "policy_name" {
+  description = "The name of the IAM policy"
   type        = string
-  default     = "DevTeamFullAccessPolicy_byTF"
+  default     = "3Task_S3ManagementPolicy"
 }
 
-variable "iam_role_and_policy_management_policy_name" {
-  description = "The name of the IAM role and policy management policy"
+variable "policy_description" {
+  description = "The description of the IAM policy"
   type        = string
-  default     = "IAMRoleAndPolicyManagement_byTF"
+  default     = "Policy for managing S3 and Lambda functions"
 }
 
 variable "permissions_boundary" {
   description = "The ARN of the permissions boundary policy"
   type        = string
   default     = "arn:aws:iam::654654554758:policy/eo_role_boundary"
+}
+
+variable "lambda_function_name" {
+  description = "The name of the Lambda function"
+  type        = string
+  default     = "S3OperationsFunction"
+}
+
+variable "allowed_ip" {
+  description = "The IP address allowed to access the resources"
+  type        = string
+  default     = "82.193.99.55/32"
 }
