@@ -9,6 +9,6 @@ variable "description" {
 }
 
 variable "policy_json" {
-  description = "The JSON policy document"
+  description = "The JSON of the IAM policy"
   type        = string
 }
