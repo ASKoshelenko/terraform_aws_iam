@@ -26,5 +26,4 @@ variable "source_code" {
 variable "environment_variables" {
   description = "Environment variables for the Lambda function"
   type        = map(string)
-  default     = {}
 }
